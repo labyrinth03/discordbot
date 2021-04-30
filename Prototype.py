@@ -4,7 +4,7 @@ import nest_asyncio
 nest_asyncio.apply()
  
 bot = commands.Bot(command_prefix='0_<')
-TOKEN = 'ODI1Mzg0NTMwODE4MjM2NDI3.YF9JPw.zaevLZt9IL1u2eo8oK3-MybZvOs'
+TOKEN = ''
 
 @bot.event
 async def on_ready():
@@ -39,4 +39,4 @@ async def on_message(message):
 
 
 
-bot.run('ODI1Mzg0NTMwODE4MjM2NDI3.YF9JPw.zaevLZt9IL1u2eo8oK3-MybZvOs')
+bot.run('')
