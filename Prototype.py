@@ -4,7 +4,7 @@ import nest_asyncio
 nest_asyncio.apply()
  
 bot = commands.Bot(command_prefix='0_<')
-TOKEN = 'ODI1Mzg0NTMwODE4MjM2NDI3.YF9JPw.zaevLZt9IL1u2eo8oK3-MybZvOs'
+TOKEN = ''
 
 @bot.event
 async def on_ready():
@@ -12,12 +12,12 @@ async def on_ready():
     await bot.change_presence(status=discord.Status.online, activity=discord.Game('Greeting'))
     
 @bot.event
-async def on_message(message):
+async def message_react(message):
     if message.author == bot.user:
         return
     
     if message.content.startswith('@hello'):
-        cchannel = message.channel   #current channel
+        cchannel = message.channel                              # cchannel = current channel
         await cchannel.send('Hello World!')
         
         def check(m):
@@ -34,9 +34,22 @@ async def on_message(message):
         def check(reaction, user):
             return user == message.author and str(reaction.emoji) == ':thinking:'
 
-        try:
+        try: 
             reaction, user = await bot.wait_for('reaction_add', timeout=10.0, check=check)
+        except:
+            await cchannel.send(":thinking:")
+            
+    if message.content.startswith('@createstage'):
+        cchannel = message.channel
+        msglist = message.content.split(" ")
+        stage = msglist[1]
+        await create_category(name = stage, *, overwrites=None, reason=None, position=None)
+        await create_stage_channel(name = stage , *, topic=None, category=stage, overwrites=None, reason=None, position=None)
+        await create_text_channel(name = "For_" + stage, *, overwrites=None, category=stage, reason=None, **options)
+    if Voicechannel.members = "":
+        await cchannel.send("No members has been detected. This category will be deleted in a day.")
 
 
 
-bot.run('ODI1Mzg0NTMwODE4MjM2NDI3.YF9JPw.zaevLZt9IL1u2eo8oK3-MybZvOs')
+
+bot.run('')
