@@ -52,4 +52,8 @@ async def message_react(message):
 
 
 
+<<<<<<< HEAD
 bot.run('')
+=======
+bot.run('')
+>>>>>>> 210480b9124afa2018019cdc27757105157c3fd8
