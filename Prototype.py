@@ -14,17 +14,10 @@ async def on_ready():
     
 @bot.event
 async def message_react(message):
-<<<<<<< HEAD
     if message.author == bot.user:                              # except bot's msg
         return
     
     if message.content.startswith('@hello'):                    # hello msg
-=======
-    if message.author == bot.user:
-        return
-    
-    if message.content.startswith('@hello'):
->>>>>>> dc8fa7a1a65fa08adb8f53e1c058bee399e522d7
         cchannel = message.channel                              # cchannel = current channel
         await cchannel.send('Hello World!')
         
@@ -47,16 +40,11 @@ async def message_react(message):
         except:
             await cchannel.send(":thinking:")
             
-<<<<<<< HEAD
     if message.content.startswith('@createstage'):              # Create Stage Channel for temporary 
-=======
-    if message.content.startswith('@createstage'):
->>>>>>> dc8fa7a1a65fa08adb8f53e1c058bee399e522d7
         cchannel = message.channel
         msglist = message.content.split(" ")
         stage = msglist[1]
         await create_category(name = stage, *, overwrites=None, reason=None, position=None)
-<<<<<<< HEAD
         await create_stage_channel(name = stage, *, topic=None, category=stage, overwrites=None, reason=None, position=None)
         await create_text_channel(name = "For_" + stage, *, overwrites=None, category=stage, reason=None, **options)
         if Voicechannel.members = None:
@@ -66,13 +54,6 @@ async def message_react(message):
             await voice.delete()
             await "For_" + stage.delete()
     
-=======
-        await create_stage_channel(name = stage , *, topic=None, category=stage, overwrites=None, reason=None, position=None)
-        await create_text_channel(name = "For_" + stage, *, overwrites=None, category=stage, reason=None, **options)
-    if Voicechannel.members = "":
-        await cchannel.send("No members has been detected. This category will be deleted in a day.")
-
->>>>>>> dc8fa7a1a65fa08adb8f53e1c058bee399e522d7
 
     if message.content.startswith('@createvoice'):              # Create Voice Channel with its temporary msg channel
         cchannel = message.channel
@@ -89,12 +70,4 @@ async def message_react(message):
             await "For_" + voice.delete()
 
 
-<<<<<<< HEAD
 bot.run('')
-=======
-<<<<<<< HEAD
-bot.run('')
-=======
-bot.run('')
->>>>>>> 210480b9124afa2018019cdc27757105157c3fd8
->>>>>>> dc8fa7a1a65fa08adb8f53e1c058bee399e522d7
