@@ -47,8 +47,9 @@ async def message_react(message):
         await create_category(name = stage, *, overwrites=None, reason=None, position=None)
         await create_stage_channel(name = stage, *, topic=None, category=stage, overwrites=None, reason=None, position=None)
         await create_text_channel(name = "For_" + stage, *, overwrites=None, category=stage, reason=None, **options)
+        print(f"stage channel created at {time.strftime('%X')}")
         if Voicechannel.members = None:
-            await cchannel.send("No members detected. This category will be deleted in a day.")
+            await cchannel.send("No members was detected. This category will be deleted in a day.")
             time.sleep(86400)
             await voice.delete()
             await voice.delete()
@@ -62,8 +63,9 @@ async def message_react(message):
         await create_category(name = voice, *, overwrites=None, reason=None, position=None)
         await create_stage_channel(name = voice, *, topic=None, category=voice, overwrites=None, reason=None, position=None)
         await create_text_channel(name = "For_" + voice, *, overwrites=None, category=voice, reason=None, **options)
+        print(f"text channel created at {time.strftime('%X')}")
         if Voicechannel.members = None:
-            await cchannel.send("No members detected. This category will be deleted in a day.")
+            await cchannel.send("No members was detected. This category will be deleted in a day.")
             time.sleep(86400)
             await voice.delete()
             await voice.delete()
